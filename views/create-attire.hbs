@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Create a new product</h2>
+  <form action="/" method="POST">
+    <div class="row">
+      <div class="col-md-4">
+        <label>images</label>
+        <input type="File" name="pictureUrl" placeholder=" images" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+
+        <label>Name</label>
+        <input type="text" name="name" placeholder="product name" />
+      </div>
+      <div class="col-md-6">
+        <label> Description</label>
+        <textarea type="text" name="description" placeholder="description"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Available sizes</label>
+        <input type="number" name="sizes" placeholder=" Available sizes" />
+      </div>
+      <div class="col-md-3">
+        <label>Fabric</label>
+        <input type="String" name="fabric" placeholder=" fabric type" />
+      </div>
+      <div class="col-md-3">
+        <label> Price</label>
+        <input type="number" name="price" placeholder=" price" />
+      </div>
+      <div class="col-md-3">
+        <label>Available colors</label>
+        <input type="String" name="colors" placeholder=" Available colors" />
+      </div>
+
+      <button type="submit">Create</button>
+    </div>
+  </form>
+</div>
