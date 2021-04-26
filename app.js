@@ -12,6 +12,7 @@ const session      = require("express-session");
 const MongoStore   = require("connect-mongo") (session);
 
 
+
 mongoose
   .connect('mongodb://localhost/maison-giovanni', {useNewUrlParser: true})
   .then(x => {
@@ -32,6 +33,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+hbs.registerPartials(path.join(__dirname, 'views/partials'))
 
 //Express session setup
 app.use(
@@ -71,6 +73,8 @@ app.use('/', index);
 const auth = require('./routes/auth');
 app.use('/', auth);
 
+const attire = require('./routes/attire');
+app.use('/', attire);
 
 
 module.exports = app;

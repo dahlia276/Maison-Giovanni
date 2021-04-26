@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {Schema, model} = mongoose;
 
-const attirechema = new Schema ({
+const attireSchema = new Schema ({
   name: String,
   description: String,
   fabric: String,
@@ -12,4 +12,4 @@ const attirechema = new Schema ({
   type: String
 });
 
-module.exports = model("Attire", attirechema);
+module.exports = model("Attire", attireSchema);

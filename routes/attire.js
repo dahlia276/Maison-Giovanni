@@ -1,19 +1,24 @@
   const express = require("express");
   const router = express.Router();
   const Book = require("../models/Attire");
-  const fileUpload = require("../configs/cloudinary")
-
+  const fileUpload = require("../configs/cloudinary");
+  const Attire = require("../models/Attire");
+    
   router.get("", async(req,res) => {
     res.render("");
   });
 
 
   //View all attires
-  router.get("/attire", async (req, res) => {
+  router.get("/attire/:type", async (req, res) => {
   try { 
-    const attiresFromDB = await Attire.find();
+ /// const attiresFromDB = await Attire.find();
+    const attireType= req.params.type;
+    const attiresFromDB = await Attire.find({ type: attireType});
+   
+    const attireLength= attiresFromDB.length;
     console.log(attiresFromDB);
-    res.render("attire-list", {attiresFromDB});
+    res.render("attire-list", {attiresFromDB, attiresFromDB, attireLength})
   }  catch(e) {
     res.render("error"); 
     console.log(`An error occured ${e}`);
