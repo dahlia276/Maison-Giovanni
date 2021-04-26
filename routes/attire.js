@@ -1,9 +1,8 @@
-  const express = require("express");
+   const express = require("express");
   const router = express.Router();
-  const Book = require("../models/Attire");
-  const fileUpload = require("../configs/cloudinary");
   const Attire = require("../models/Attire");
-    
+  const fileUpload = require("../configs/cloudinary")
+
   router.get("", async(req,res) => {
     res.render("");
   });

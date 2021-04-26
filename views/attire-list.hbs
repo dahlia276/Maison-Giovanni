@@ -2,8 +2,24 @@
     <h1>{{attiresFromDb}}</h1>
   <h5> {{attireLength}} products</h5>
     <div class="row">
-        {{#each attire}}
-        {{> list-partial}}
+        {{#each attiresFromDB}}
+                  <div class="col-md-4">
+            <div class="card">
+              <img
+                class="card-img-top"
+                src={{pictureUrl}}
+                alt={{name}}
+              />
+              <div class="card-body">
+              <a href="/attire/{{id}}">
+                <h5 class="card-title">{{name}} </h5>
+              </a>
+
+                <p class="card-text">{{price}}</p>
+                
+              </div>
+            </div>
+          </div>
         {{/each}}
     </div>
 </div>

@@ -5,9 +5,14 @@ const attireSchema = new Schema ({
   name: String,
   description: String,
   fabric: String,
-  size: String ,
+  availability: [
+    {
+      amount: Number,
+      size: String,
+      color: String
+    }
+  ],
   price: Number,
-  color: String,
   pictureUrl: String,
   type: String
 });
