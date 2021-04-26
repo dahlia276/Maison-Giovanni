@@ -9,10 +9,21 @@
 <p>Fabric: {{attire.fabric}}</p>
 <p>Price: {{attire.price}}</p>
 <p>Available colors: </p>
+<ul>
     {{#each attire.availability}}
+    <li>
         {{this.this.color}}
+    </li>
     {{/each}}
-<p>Available sizes: {{attire.size}}</p> 
+</ul>
+<p>Available sizes:</p> 
+<ul>
+    {{#each attire.availability}}
+    <li>
+        {{this.this.size}}
+    </li>
+    {{/each}}
+</ul>
 <br>
 
 <hr>

@@ -1,81 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.account{
+ color: #fbceb5;
 }
 
-a {
-  color: #00B7FF;
-}
-
-
-body{
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.8;
-  font-weight: normal;
-  color: gray;
-}
-
-
-
-.justify-content-center{
-  -webkit-box-pack: center !important;
-  justify-content: center !important;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-.mb-5, .my-5{
-margin-bottom: 3rem !important;
-}
-
-
-element.style {
-  background-image: url(images/bg.jpg);
-  height: 391px;
-}
-
-
-
-.img{
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.ftco-section {
-  padding: 7em 0;
-}
-
-
-.container {
+.here{
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 720px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #000;
+  background: #fff;
 }
-
-.col-md-6 {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%; }
-
-  .form-control {
-    background: transparent;
-    border: none;
-    height: 50px;
-    color: white !important;
-    border: 1px solid transparent;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-  }
+       
