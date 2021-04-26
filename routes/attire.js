@@ -18,7 +18,7 @@
    
     const attireLength= attiresFromDB.length;
     console.log(attiresFromDB);
-    res.render("attire-list", {attiresFromDB, attiresFromDB, attireLength})
+    res.render("attire-list", { attiresFromDB, attireLength})
   }  catch(e) {
     res.render("error"); 
     console.log(`An error occured ${e}`);
