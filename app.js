@@ -71,6 +71,7 @@ app.use('/', index);
 const auth = require('./routes/auth');
 app.use('/', auth);
 
-
+const attire = require('./routes/attire');
+app.use('/', attire);
 
 module.exports = app;

@@ -64,3 +64,18 @@ element.style {
   -ms-flex: 0 0 50%;
   flex: 0 0 50%;
   max-width: 50%; }
+
+  .form-control {
+    background: transparent;
+    border: none;
+    height: 50px;
+    color: white !important;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }

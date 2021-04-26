@@ -1,7 +1,33 @@
 <div class="container">
     <div class="row">
-       
-        
-        
+ <h1>{{attire.name}}</h1>
+ {{#if attire.pictureUrl}}
+        <img src={{attire.pictureUrl}} />
+        {{/if}}
+<hr>
+<p>Description: {{attire.description}}</p>
+<p>Fabric: {{attire.fabric}}</p>
+<p>Price: {{attire.price}}</p>
+<p>Available colors: </p>
+    {{#each attire.availability}}
+        {{this.this.color}}
+    {{/each}}
+<p>Available sizes: {{attire.size}}</p> 
+<br>
+
+<hr>
+<p>Add a review</p>
+<form action="/reviews/{{attire.id}}/add" method="POST">
+<label> User </label>
+<input type="text" name="user"/>
+<label> Comment</label>
+<textarea name="comment"> </textarea>
+<button type="submit">Add review</button>
+</form>
+<hr>
+<p>Reviews:</p>
+{{#each attire.reviews }}
+<p> {{comment}} -- {{user}} </p>
+{{/each}}
     </div>
 </div>
