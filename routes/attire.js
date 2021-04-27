@@ -33,6 +33,8 @@ router.get("/attires/:type/attire/:subtype", async (req, res) => {
 
 })
 
+//view ties
+
 //Create new attire
 
 router.get("/attire/create", checkRoles('admin','editor'),async (req, res) => {

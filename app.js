@@ -64,7 +64,7 @@ hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+//app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
@@ -77,5 +77,7 @@ app.use('/', auth);
 const attire = require('./routes/attire');
 app.use('/', attire);
 
+const custom = require('./routes/custom');
+app.use('/', custom);
 
 module.exports = app;
