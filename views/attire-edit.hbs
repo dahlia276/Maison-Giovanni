@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Edit {{attire.name}}</h2>
+  <form action="/attire/{{attire.id}}/edit" method="POST">
+    <div class="row">
+      <div class="col-md-4">
+        <label>images</label>
+        <input type="File" name="pictureUrl" placeholder=" images"  value="{{attire.pictureUrl}}"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+
+        <label>Name</label>
+        <input type="text" name="name" placeholder="product name" value="{{attire.name}}" />
+      </div>
+      <div class="col-md-6">
+        <label> Description</label>
+        <textarea type="text" name="description" placeholder="description">
+          {{attire.description}}
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Available sizes</label>
+        <input type="Srting" name="sizes" placeholder=" Available sizes" value="{{attire.size}}"/>
+      </div>
+      <div class="col-md-3">
+        <label>Fabric</label>
+        <input type="String" name="fabric" placeholder=" fabric type" value="{{attire.fabric}}"/>
+      </div>
+      <div class="col-md-3">
+        <label> Price</label>
+        <input type="number" name="price" placeholder=" price" value="{{attire.price}}" />
+      </div>
+      <div class="col-md-3">
+        <label>Available colors</label>
+        <input type="String" name="colors" placeholder=" Available colors" value="{{attire.color}}" />
+      </div>
+
+      <button type="submit">Save changes</button>
+    </div>
+  </form>
+</div>
