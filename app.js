@@ -14,7 +14,7 @@ const MongoStore   = require("connect-mongo") (session);
 
 
 mongoose
-  .connect('mongodb://localhost/maison-giovanni', {useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -77,5 +77,7 @@ app.use('/', auth);
 const attire = require('./routes/attire');
 app.use('/', attire);
 
+const custom = require('./routes/custom');
+app.use('/', custom);
 
 module.exports = app;

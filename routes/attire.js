@@ -32,6 +32,8 @@ router.get("/attires/:type/attire/:subtype", async (req, res) => {
 
 })
 
+//view ties
+
 //Create new attire
 
 router.get("/attire/create", async (req, res) => {

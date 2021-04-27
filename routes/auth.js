@@ -45,7 +45,7 @@ router.post("/signup", async (req,res) => {
   const {username, email, password} = req.body;
   //check for username and passwords beong filled out
   if (username === "" || password === "") {
-  res.render("auth/signup", {errorMessage: "Indicate username and password"});
+  res.render("/", {errorMessage: "Indicate username and password"});
   return;
   }
  //check for password strengh - regular expression

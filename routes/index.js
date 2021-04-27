@@ -10,8 +10,8 @@ router.get("/about-us", (req,res)=> {
   res.render("about-us");
 });
 
-router.get("/custom", (req,res)=> {
+/*router.get("/custom", (req,res)=> {
   res.render("custom-form");
-});
+});*/
 
 module.exports = router;
