@@ -9,7 +9,7 @@
 
 
   //View all attires
-  router.get("/attire/:type", async (req, res) => {
+  router.get("/attires/:type", async (req, res) => {
   try { 
  /// const attiresFromDB = await Attire.find();
     const attireType= req.params.type;
@@ -41,7 +41,7 @@
       price,
       color,
       pictureUrl: fileOneCloudinary});
-    res.redirect("/attire");
+    res.redirect("/attires/:type");
   });
 
 
@@ -79,7 +79,7 @@
     const attireId = req.params.attireId;
     await Attire.findByIdAndDelete(attireId);
     
-    res.redirect("/attire")
+    res.redirect("/attire/:type")
   });
 
   module.exports = router; 
