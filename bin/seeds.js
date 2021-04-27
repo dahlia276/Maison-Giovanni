@@ -9,14 +9,17 @@ mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
 
 const attires=[
   {
-  name: "Spring jacket",
-  description: "lovely spring jacket",
-  fabric: "satin",
-  size: "medium" ,
+  name: 'Spring jacket',
+  description: 'lovely spring jacket',
+  fabric: 'satin',
+  
+    size: 'medium',
+    color: 'red',
+    amount: 6,
+ 
   price: 200,
-  color: "medium",
-  pictureUrl: "",
-  type: "medium"
+  pictureUrl: '',
+  type: 'jacket'
   }
 ]
 

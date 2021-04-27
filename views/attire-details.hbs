@@ -10,23 +10,24 @@
 <p>Price: {{attire.price}}</p>
 <p>Available colors: </p>
 <ul>
-    {{#each attire.availability}}
+    {{#each attire.color}}
     <li>
-        {{this.this.color}}
+        {{this.color}}
     </li>
     {{/each}}
 </ul>
 <p>Available sizes:</p> 
 <ul>
-    {{#each attire.availability}}
+    {{#each attire.size}}
     <li>
-        {{this.this.size}}
+        {{this.size}}
     </li>
     {{/each}}
 </ul>
 <br>
 
 <hr>
+
 <p>Add a review</p>
 <form action="/reviews/{{attire.id}}/add" method="POST">
 <label> User </label>
