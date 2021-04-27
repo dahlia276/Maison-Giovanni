@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Attire = require("../models/Attire");
 const fileUpload = require("../configs/cloudinary")
+const checkRoles = require('../middleware');
 
 router.get("", async (req, res) => {
   res.render("");
@@ -34,11 +35,11 @@ router.get("/attires/:type/attire/:subtype", async (req, res) => {
 
 //Create new attire
 
-router.get("/attire/create", async (req, res) => {
+router.get("/attire/create", checkRoles('admin','editor'),async (req, res) => {
   res.render("create-attire");
 });
 
-router.post("/attire/create", fileUpload.single("image"), async (req, res) => {
+router.post("/attire/create", fileUpload.single("image"), checkRoles('admin','editor'),async (req, res) => {
   const fileOneCloudinary = req.file.path; //file path(url) is on cloudinary
   const { name, description, fabric, size, price, color, pictureUrl } = req.body;
   await Attire.create({
@@ -63,12 +64,12 @@ router.get("/attire/:attireId", async (req, res) => {
 
 
 //Edit attire info
-router.get("/attire/:attireId/edit", async (req, res) => {
+router.get("/attire/:attireId/edit", checkRoles('admin, editor'),async (req, res) => {
   const attire = await Attire.findById(req.params.attireId);
   res.render("attire-edit", { attire })
 });
 
-router.post("/attire/:attireId/edit", async (req, res) => {
+router.post("/attire/:attireId/edit",checkRoles('admin, editor'), async (req, res) => {
   try {
     const attireId = req.params.attireId
     const { name, description, fabric, size, price, color, pictureUrl } = req.body;
@@ -90,7 +91,7 @@ router.post("/attire/:attireId/edit", async (req, res) => {
 
 
 //Delete attire 
-router.post("/attire/:attireId/delete", async (req, res) => {
+router.post("/attire/:attireId/delete",checkRoles('admin','editor'), async (req, res) => {
   const attireId = req.params.attireId;
   await Attire.findByIdAndDelete(attireId);
 
