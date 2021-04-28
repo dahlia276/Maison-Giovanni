@@ -80,4 +80,6 @@ app.use('/', attire);
 const custom = require('./routes/custom');
 app.use('/', custom);
 
+const cart = require('./routes/cart');
+app.use('/', cart);
 module.exports = app;

@@ -47,7 +47,11 @@ btn.btn-primary{
 .here{
   margin-left: 57PX;
   margin-top: -23px;
+  background: #fbceb5 !important;
+  border: 1px solid #fbceb5 !important;
+  color: #000 !important;
 }
+
 
 .navbar-nav{
   margin-left: 450px;
@@ -56,3 +60,55 @@ btn.btn-primary{
 .dalia-nav{
   margin-left: 90px;
 }
+
+.type{
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 20px;
+  color: white;
+}
+
+.type1{
+  text-align: center;
+  font-weight: lighter;
+  margin-top: -10px;
+  color: white;
+}
+
+.card-title{
+  text-align: center;
+  font-weight: lighter;
+}
+
+.card-text{
+  text-align: center;
+  font-weight: lighter;
+}
+
+.row{
+  margin-top: 40px;
+}
+
+.card{
+  margin-top: 30px;
+}
+
+.backgroundimage{
+  background-size: cover;
+  background-attachment: fixed;
+  height: 3000px;
+}
+
+.sign{
+  background: #fbceb5 !important;
+  border: 1px solid #fbceb5 !important;
+  color: #000 !important;
+}
+
+.description{
+  COLOR: WHITE;
+  FONT-WEIGHT: lighter;
+}
+
+
+

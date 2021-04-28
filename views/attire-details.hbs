@@ -5,9 +5,9 @@
         <img src={{attire.pictureUrl}} />
         {{/if}}
 <hr>
-<p>Description: {{attire.description}}</p>
+<p class="description"> {{attire.description}}</p>
 <p>Fabric: {{attire.fabric}}</p>
-<p>Price: {{attire.price}}</p>
+<p>Price: {{attire.price}} </p>
 <p>Available colors: </p>
 <ul>
     {{#each attire.color}}
@@ -24,6 +24,9 @@
     </li>
     {{/each}}
 </ul>
+<form action="/cart/{{attire.id}}/add" method="post">
+     <button type="submit" value="Submit" class="form-control btn btn-primary submit px-3">Add to cart</button>
+ </form>
 <br>
 
 <hr>
