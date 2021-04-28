@@ -1,44 +1,52 @@
+
+
+
+<body class="img js-fullheight" style="background-image: url(&quot;images/bg.jpg&quot;); height: 391px;">
+<section class="ftco-section">
 <div class="container">
-  <h2>Edit {{attire.name}}</h2>
-  <form action="/attire/{{attire.id}}/edit" method="POST">
-    <div class="row">
-      <div class="col-md-4">
-        <label>images</label>
-        <input type="File" name="pictureUrl" placeholder=" images"  value="{{attire.pictureUrl}}"/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-
-        <label>Name</label>
-        <input type="text" name="name" placeholder="product name" value="{{attire.name}}" />
-      </div>
-      <div class="col-md-6">
-        <label> Description</label>
-        <textarea type="text" name="description" placeholder="description">
-          {{attire.description}}
-        </textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <label>Available sizes</label>
-        <input type="Srting" name="size" placeholder=" Available sizes" value="{{attire.size}}"/>
-      </div>
-      <div class="col-md-3">
-        <label>Fabric</label>
-        <input type="String" name="fabric" placeholder=" fabric type" value="{{attire.fabric}}"/>
-      </div>
-      <div class="col-md-3">
-        <label> Price</label>
-        <input type="number" name="price" placeholder=" price" value="{{attire.price}}" />
-      </div>
-      <div class="col-md-3">
-        <label>Available colors</label>
-        <input type="String" name="color" placeholder=" Available colors" value="{{attire.color}}" />
-      </div>
-
-      <button type="submit">Save changes</button>
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section"></h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4">
+<div class="login-wrap p-0">
+<h3 class="mb-4 text-center">Edit {{attire.name}}</h3>
+<form action="/create" method="POST" class="signin-form">
+<div class="form-group">
+<input type="File" name="pictureUrl" placeholder=" images" />
+<div class="form-group">
+<input type="text" class="form-control" name="description" placeholder="Name" required="" value={{attire.name}}>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="description" placeholder="Description" required="" value={{attire.description}}>
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="sizes" placeholder="Available sizes" required="" value={{attire.size}}/>
+</div>
+<div class="form-group">
+<input type="text" name="fabric" class="form-control" placeholder="Fabric" required="" value={{attire.fabric}}/>
+</div>
+<div class="form-group">
+<input type="number" name="price" class="form-control" placeholder="Price" required="" value={{attire.price}}/>
+</div>
+<div class="form-group">
+<input type="string" name="colors" class="form-control" placeholder="Available colors" required=""  value="{{attire.color}}" />
+</div>
+<div class="form-group">
+<button type="submit" class="form-control btn btn-primary submit px-3">Save changes</button>
+</div>
+<div class="form-group d-md-flex">
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
     </div>
   </form>
 </div>

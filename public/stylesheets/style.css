@@ -118,5 +118,26 @@ btn.btn-primary{
   color: white;
 }
 
+.about-title{
+  color:white;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.about-p{
+  color:white;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.admin{
+  margin-bottom: 5px;
+}
+
+.create{
+  height: 40px;
+  margin-top: -23px;
+}
+
 
 

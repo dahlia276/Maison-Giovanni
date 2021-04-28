@@ -1,42 +1,49 @@
+
+
+
+<body class="img js-fullheight" style="background-image: url(&quot;images/bg.jpg&quot;); height: 391px;">
+<section class="ftco-section">
 <div class="container">
-  <h2>Create a new product</h2>
-  <form action="/create" method="POST">
-    <div class="row">
-      <div class="col-md-4">
-        <label>images</label>
-        <input type="File" name="pictureUrl" placeholder=" images" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-
-        <label>Name</label>
-        <input type="text" name="name" placeholder="product name" />
-      </div>
-      <div class="col-md-6">
-        <label> Description</label>
-        <textarea type="text" name="description" placeholder="description"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <label>Available sizes</label>
-        <input type="number" name="sizes" placeholder=" Available sizes" />
-      </div>
-      <div class="col-md-3">
-        <label>Fabric</label>
-        <input type="String" name="fabric" placeholder=" fabric type" />
-      </div>
-      <div class="col-md-3">
-        <label> Price</label>
-        <input type="number" name="price" placeholder=" price" />
-      </div>
-      <div class="col-md-3">
-        <label>Available colors</label>
-        <input type="String" name="colors" placeholder=" Available colors" />
-      </div>
-
-      <button type="submit">Create</button>
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section"></h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-4">
+<div class="login-wrap p-0">
+<h3 class="mb-4 text-center">Create a new product</h3>
+<form action="/create" method="POST" class="signin-form">
+<div class="form-group">
+<input type="File" name="pictureUrl" placeholder=" images" />
+<div class="form-group">
+<input type="text" class="form-control" name="description" placeholder="Description" required="">
+</div>
+<div class="form-group">
+<input type="text" class="form-control" name="sizes" placeholder="Available sizes" required="">
+</div>
+<div class="form-group">
+<input type="text" name="fabric" class="form-control" placeholder="Fabric" required="">
+</div>
+<div class="form-group">
+<input type="number" name="price" class="form-control" placeholder="Price" required="">
+</div>
+<div class="form-group">
+<input type="string" name="colors" class="form-control" placeholder="Available colors" required="">
+</div>
+<div class="form-group">
+<button type="submit" class="form-control btn btn-primary submit px-3">Create</button>
+</div>
+<div class="form-group d-md-flex">
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
     </div>
   </form>
 </div>

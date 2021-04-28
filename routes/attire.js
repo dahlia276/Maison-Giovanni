@@ -81,24 +81,24 @@ router.get("/attire/:attireId", async (req, res) => {
 
 //Manage Inventory
 
-// router.get("/attire/:attireId/inventory",checkRoles('admin','editor'), async (req,res)=>{
-// res.render('inventory', await Attire.findById(req.params.attireId));
-// });
+ router.get("/attire/:attireId/inventory",checkRoles('admin','editor'), async (req,res)=>{
+res.render('inventory', await Attire.findById(req.params.attireId));
+ });
 
-// router.post('/attire/:attireId/inventory', checkRoles('admin','editor'), async (req,res)=>{
-//   try{
-//     const attire= await Attire.findById(req.params.attireId);
-//     await Inventory.create({
-//       size,
-//       color,
-//       quantity
-//     });
-//     res.redirect('/attire/')
+ router.post('/attire/:attireId/inventory', checkRoles('admin','editor'), async (req,res)=>{
+  try{
+    const attire= await Attire.findById(req.params.attireId);
+    await Inventory.create({
+      size,
+      color,
+     quantity
+   });
+     res.redirect('/attire/')
 
-//   }catch(e){
-//     res.render('error');
-//   }
-// });
+  }catch(e){
+   res.render('error');
+ }
+ });
 
 
 //Edit attire info
