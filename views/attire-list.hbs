@@ -1,24 +1,37 @@
 <div class="container">
-    <h1 class="type">{{attireType}}</h1>
-  <h5 class="type1"> {{attireLength}} products</h5>
-    <div class="row">
-        {{#each attiresFromDB}}
-                  <div class="col-md-4">
-            <div class="card">
-              <img
-                class="card-img-top"
-                src={{pictureUrl}}
-                alt={{name}}
-              />
-              <div class="card-body">
-              <a href="/attire/{{id}}">
-                <h5 class="card-title">{{name}} </h5>
-              </a>
+  <h1>{{attireType}}</h1>
+  <h5> {{attireLength}} products</h5>
+  <div class="row">
+    {{#eq user.role 'admin'}}
+    <a class="btn btn-primary" href="/attire/create">Create new product</a>
+    {{/eq}}
+    {{#each attiresFromDB}}
+    <div class="col-md-4">
+      <div class="card">
+        <img class="card-img-top" src={{pictureUrl}} alt={{name}} />
+        <div class="card-body">
+          <a href="/attire/{{id}}">
+            <h5 class="card-title">{{name}} </h5>
+          </a>
 
-                <p class="card-text">{{price}} L.E</p>
-              </div>
-            </div>
-          </div>
-        {{/each}}
+          <p class="card-text">{{price}}</p>
+
+          {{#eq ../user.role 'admin'}}
+        <!--
+          <a class="btn btn-primary" href="/attire/{{id}}/inventory">Manage Inventory </a>
+          -->
+          <a class="btn btn-primary" href="/attire/{{id}}/edit">Edit </a>
+          <form action="/attire/{{id}}/delete" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+
+          {{/eq}}
+
+        </div>
+      </div>
     </div>
+    {{/each}}
+
+
+  </div>
 </div>

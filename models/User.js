@@ -17,4 +17,4 @@ email: {
   role: String //admin,reader,writer,super
 });
 
-module.exports = model("user", userschema);
+module.exports = model("User", userschema);

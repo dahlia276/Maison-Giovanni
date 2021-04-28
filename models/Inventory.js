@@ -3,7 +3,8 @@ const {Schema, model} = mongoose;
 
 const inventorySchema = new Schema ({
   attire: {
-    type: mongoose.SchemaType.ObjectId
+    type: mongoose.SchemaType.ObjectId,
+    ref: 'Attire'
   },
   color: String,
   size: String,

@@ -29,7 +29,13 @@ router.post("/cart/:attireId/add", async (req,res)=> {
 
 //view shopping cart
 router.get("/shopping-cart", async (req, res) => {
-  res.render("shopping-cart");
+  const currentUser = await User.findById(req.session.currentUser._id);
+  const cart = await Cart.findOne({ user: currentUser }).populate('items');
+  let items = [];
+  if (cart) {
+    items = cart.items;
+  }
+  res.render("shopping-cart", { items });
 });
 
 
