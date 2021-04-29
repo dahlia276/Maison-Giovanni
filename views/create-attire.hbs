@@ -1,53 +1,3 @@
-<div class="container">
-  <h2>Create a new product</h2>
-  <form action="/attire/create" method="POST" enctype="multipart/form-data">
-    <div class="row">
-      <div class="col-md-4">
-        <label>images</label>
-        <input type="File" name="image" placeholder=" images" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-
-        <label>Name</label>
-        <input type="text" name="name" placeholder="product name" />
-      </div>
-      <div class="col-md-6">
-        <label> Description</label>
-        <textarea type="text" name="description" placeholder="description"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3">
-        <label>Available sizes</label>
-        <input type="Array" name="size" placeholder=" Available sizes" />
-      </div>
-      <div class="col-md-3">
-        <label>Fabric</label>
-        <input type="String" name="fabric" placeholder=" fabric type" />
-      </div>
-      <div class="col-md-3">
-        <label> Price</label>
-        <input type="number" name="price" placeholder=" price" />
-      </div>
-      <div class="col-md-3">
-        <label>Available colors</label>
-        <input type="Array" name="color" placeholder=" Available colors" />
-      </div>
-
-        <label> 
-        Type
-        </label>
-        <select name="type" >
-          <option value="Jacket">Jacket</option>
-          <option value="Tie">Tie</option>
-          <option value="Suit">Suit</option>
-        </select>
-
-      <button type="submit">Create</button>
-
-
 
 <body class="img js-fullheight" style="background-image: url(&quot;images/bg.jpg&quot;); height: 391px;">
 <section class="ftco-section">
@@ -79,10 +29,18 @@
 <div class="form-group">
 <input type="string" name="colors" class="form-control" placeholder="Available colors" required="">
 </div>
+<div class="form-group d-md-flex">
+<label class="create-attire"> 
+        Type
+        </label>
+        <select name="type" >
+          <option value="Jacket">Jacket</option>
+          <option value="Tie">Tie</option>
+          <option value="Suit">Suit</option>
+        </select>
+</div>
 <div class="form-group">
 <button type="submit" class="form-control btn btn-primary submit px-3">Create</button>
-</div>
-<div class="form-group d-md-flex">
 </div>
 </form>
 </div>

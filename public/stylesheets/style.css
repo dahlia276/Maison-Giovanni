@@ -1,3 +1,7 @@
+p {
+  margin-bottom: 0 !important;
+}
+
 .account{
  color: #fbceb5;
 }
@@ -56,6 +60,16 @@ btn.btn-primary{
   
 }
 
+.about-us{
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 800px;
+  height: 600px;
+  margin-top: 65px;
+  margin-left: 300px;
+  text-align: center;
+}
+
 
 .here{
   margin-left: 57PX;
@@ -110,7 +124,7 @@ btn.btn-primary{
 .backgroundimage{
   background-size: cover;
   background-attachment: fixed;
-  height: 3000px;
+  min-height: 100vh;
   
 }
 
@@ -211,5 +225,124 @@ font-weight: lighter;
   margin-top: -23px;
 }
 
+.cart-view{
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 900px;
+  margin-left: 107px;
+}
 
+.cart-image{
+  margin-left: 320px;
+  margin-top: 50px;
+}
 
+.remove-btn{
+width: 90px;
+margin-left: 698px;
+}
+
+.attire-info{
+  color: white;
+  font-weight: lighter;
+}
+
+.attire-price{
+margin-left: 30px;
+}
+
+.attire-color{
+  margin-left: 30px;
+  }
+
+  .attire-size{
+    margin-left: 30px;
+    }
+
+    .attire-fabric{
+      margin-left: 30px;
+      }
+
+      .attire-name{
+        margin-left: 0px;
+        }
+      
+.total{
+  color: white;
+  font-weight: lighter;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 542px;
+  text-align: center;
+}
+  .description{
+    margin-left: 15px;
+    text-align: left;
+  }
+
+.cart-all{
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.cart-image{
+  width: 300px;
+  margin-inline: 176px;
+  margin-bottom: 41px;
+  margin-top: 25px;
+}
+
+.shopping{
+  margin-top: -65px;
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: rgb(7, 7, 7);
+	color: white;
+	text-align: center;
+}
+
+.create-attire{
+  color: white;
+  font-weight: lighter;
+}
+
+.attire-name-c{
+  margin-left: 154px;
+  color: white;
+  font-weight: lighter;
+}
+
+.description-c{
+  text-align: inherit;
+  color: white;
+  font-weight: lighter;
+}
+
+.attire-fabric-c{
+  text-align: inherit;
+  color: white;
+  font-weight: lighter;
+}
+
+.attire-price-c{
+  text-align: inherit;
+  color: white;
+  font-weight: lighter;
+}
+
+.attire-color-c{
+  text-align: inherit;
+  color: white;
+  font-weight: lighter;
+}
+
+.attire-size-c{
+  text-align: inherit;
+  color: white;
+  font-weight: lighter;
+}

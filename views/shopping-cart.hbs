@@ -1,46 +1,44 @@
-<!--<ul>
-  {{#each items}}
-    <li class="info">
-      {{name}}
-    </li>
-      <li class="info">
-      {{description}}
-    </li>
-    <li class="info">
-      {{price}}
-    </li>
-    <li>
-      <img src={{pictureUrl}}/>
-    </li>
-  {{/each}}
-</ul> -->
-
-
 <div class="container">
-<div class="row justify-content-center">
-<div class="col-md-6 text-center mb-5">
-<h2 class="heading-section"></h2>
-</div>
-</div>
-<h3 class="mb-4 text-center">Shopping cart</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+    <h2 class="heading-section"></h2>
+    </div>
+  </div>
+<div class="cart-info">
+<h3 class=" shopping mb-4 text-center">Shopping cart</h3>
  {{#each items}}
-  <label class="form-group lighter"> Item</label>
-    <input class="opacity" class="form-control" type="text" name="item" value="{{name}}"/>
-    <hr>
-    <label class="form-group lighter"> Description </label>
-    <input class="opacity" type="text" name="description" value="{{description}}"/>
-    <hr>
-    <label class="form-group lighter"> Price </label>
-    <input class="opacity" type="text" name="item" value=" {{price}}"/>
-    <label> Image </label>
-  <img  class="cart-image" src="{{pictureUrl}}"/>
-  <form action="/cart/{{id}}/remove" method="POST">
-      <button type="submit" class="form-control btn btn-primary submit px-3">Remove</button>
-  </form>
+ <div class="cart-all">
+ <div class="row">
+   <div class="col-6">
+     <div class="attire-info-c">
+       <h1 class="attire-name-c">{{name}}</h1>
+        <p class="description-c"> {{description}}</p>
+        <p class="attire-fabric-c">Fabric: {{fabric}}</p>
+        <h6 class="attire-price-c">Price: {{price}} </h6>
+        <p class="attire-color-c"> Color: </p>
+            {{#each color}}
+                {{this}}
+            {{/each}}
+        <p class="attire-size-c">Size:</p> 
+            {{#each size}}
+              {{this}}
+            {{/each}}
+               <form action="/cart/{{id}}/remove" method="POST">
+          <button type="submit" class="form-control btn btn-primary submit px-3">Remove item</button>
+      </form>
+      </div>
+   </div>
+   <div class="col-6">
+      <img class="cart-image img-fluid" src="{{pictureUrl}}"/>
+   </div>
+ </div>
+ </div>
   {{/each}}
-    <p>Total Price: <span id="price"> </span></p>
+    <h3 class="total">Total Price: <span id="price"> </span></h3>
     <input type="hidden" id="hidden" name="items" value="{{stringifyItems}}">
 </div>
+
+
 
 <script>
   const myProducts = document.getElementById("hidden").value;
@@ -54,3 +52,5 @@ let totalPrice = prices.reduce((a, b) => {
 }, 0);
 document.getElementById('price').innerText = totalPrice
 </script>
+
+
