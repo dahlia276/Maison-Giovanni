@@ -3,7 +3,7 @@ function checkRoles(roles){
     if(req.session.currentUser && roles.includes(req.session.currentUser.role)){
       next();
     } else{
-      res.redirect('/login');
+      res.render('not-found');
     }
   }
 

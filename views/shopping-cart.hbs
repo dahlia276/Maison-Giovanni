@@ -17,22 +17,22 @@
 
 
 <div class="container">
-<div class="row justify-content-center">
-<div class="col-md-6 text-center mb-5">
-<h2 class="heading-section"></h2>
-</div>
-</div>
-<h3 class="mb-4 text-center">Shopping cart</h3>
-<form action="/books/create" method="POST">
- {{#each items}}
-  <label class="form-group"> Item</label>
-    <input class="form-control" type="text" name="item" value="{{name}}"/>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+      <h2 class="heading-section"></h2>
+    </div>
+  </div>
+  <h3 class="mb-4 text-center">Shopping cart</h3>
+  <form action="/books/create" method="POST">
+    {{#each items}}
+    <label class="form-group"> Item</label>
+    <input class="form-control" type="text" name="item" value="{{name}}" />
     <label class="form-group"> Description </label>
-    <input type="text" name="description" value="{{description}}"/>
+    <input type="text" name="description" value="{{description}}" />
     <label class="form-group cart"> Price </label>
-    <input type="text" name="item" value=" {{price}}"/>
+    <input type="text" name="item" value=" {{price}}" />
     <label> Image </label>
-    <img src={{item.pictureUrl}/>
+    <img src={{item.pictureUrl} />
     {{/each}}
-</form>
+  </form>
 </div>
