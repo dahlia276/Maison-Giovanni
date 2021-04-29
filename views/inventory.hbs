@@ -1,13 +1,14 @@
-<!--
 <div class="container">
   <h2>Create a new product</h2>
+  <p>{{name}}</p>
   <form action="//attire/{{attire.id}}/inventory" method="POST">
     <div class="row">
       <div class="col-md-4">
         <select name="size">
           <option value="">Choose Size</option>
-          {{#each attire.size}}
-          <option value={{attire.size}}>{{attire.size}}</option>
+        
+          {{#each size}}
+          <option value={{this}}>{{this}}</option>
           {{/each}}
         </select>
       </div>
@@ -21,9 +22,14 @@
       </div>
       <div class="col-md-4">
         <label> Quantity</label>
-        <textarea type="Number" name="quantity" placeholder="Quantity"></textarea>
+        <input type="Number" name="quantity" placeholder="Quantity"/>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+<button type="submit">Save</button>
+        </div>
+      </div>
+      
     </div>
   </form>
 </div>
--->

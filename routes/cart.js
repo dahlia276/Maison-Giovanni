@@ -4,6 +4,7 @@ const Cart = require("../models/Cart");
 const User = require("../models/User");
 const Attire = require("../models/Attire");
 
+
 router.post("/cart/:attireId/add", async (req,res)=> {
   const userId = req.session.currentUser._id;
   const attireId = req.params.attireId;
@@ -12,7 +13,7 @@ router.post("/cart/:attireId/add", async (req,res)=> {
   const currentCart = await Cart.findOne({ user });
 
   if (currentCart) {
-    //update the cart
+    //Update the cart
     await Cart.findByIdAndUpdate(currentCart._id, {
       $push: { items: attire  }
     })
@@ -27,7 +28,7 @@ router.post("/cart/:attireId/add", async (req,res)=> {
 });
 
 
-//view shopping cart
+//View shopping cart
 router.get("/shopping-cart", async (req, res) => {
   const currentUser = await User.findById(req.session.currentUser._id);
   const cart = await Cart.findOne({ user: currentUser }).populate('items');
@@ -35,9 +36,28 @@ router.get("/shopping-cart", async (req, res) => {
   if (cart) {
     items = cart.items;
   }
-  res.render("shopping-cart", { items });
+  console.log(items.length);
+  if (!cart) {
+    res.render("empty-cart");
+    return
+  }
+  let stringifyItems = JSON.stringify(cart)
+  res.render("shopping-cart", { items, stringifyItems });
 });
 
+
+//Delete item from the cart
+router.post("/cart/:attireId/remove", async (req,res) => {
+
+  const userId = req.session.currentUser._id;
+  const attireId = req.params.attireId;
+  const user = await User.findById(userId);
+  const currentCart = await Cart.findOne({ user });
+  await Cart.findByIdAndUpdate(currentCart._id, { $pull: {
+    items: attireId
+  }});
+  res.redirect("/shopping-cart")
+});
 
 
 module.exports = router;
