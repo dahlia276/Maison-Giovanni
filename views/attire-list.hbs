@@ -1,9 +1,9 @@
 <div class="container">
-  <h1>{{attireType}}</h1>
-  <h5> {{attireLength}} products</h5>
+  <h1 class="type">{{attireType}}</h1>
+  <h5 class="type1"> {{attireLength}} products</h5>
   <div class="row">
     {{#eq user.role 'admin'}}
-    <a class="btn btn-primary" href="/attire/create">Create new product</a>
+    <a class="btn btn-primary create" href="/attire/create">Create new product</a>
     {{/eq}}
     {{#each attiresFromDB}}
     <div class="col-md-4">
@@ -18,7 +18,7 @@
 
           {{#eq ../user.role 'admin'}}
         
-          <a class="btn btn-primary" href="/attire/{{id}}/inventory">Manage Inventory </a>
+          <a class="btn btn-primary admin" href="/attire/{{id}}/inventory">Manage Inventory </a>
           
           <a class="btn btn-primary" href="/attire/{{id}}/edit">Edit </a>
           <form action="/attire/{{id}}/delete/{{../attireType}}" method="POST">

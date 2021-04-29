@@ -17,22 +17,40 @@
 
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6 text-center mb-5">
-      <h2 class="heading-section"></h2>
-    </div>
-  </div>
-  <h3 class="mb-4 text-center">Shopping cart</h3>
-  <form action="/books/create" method="POST">
-    {{#each items}}
-    <label class="form-group"> Item</label>
-    <input class="form-control" type="text" name="item" value="{{name}}" />
-    <label class="form-group"> Description </label>
-    <input type="text" name="description" value="{{description}}" />
-    <label class="form-group cart"> Price </label>
-    <input type="text" name="item" value=" {{price}}" />
-    <label> Image </label>
-    <img src={{item.pictureUrl} />
-    {{/each}}
-  </form>
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section"></h2>
 </div>
+</div>
+<h3 class="mb-4 text-center">Shopping cart</h3>
+ {{#each items}}
+  <label class="form-group lighter"> Item</label>
+    <input class="opacity" class="form-control" type="text" name="item" value="{{name}}"/>
+    <hr>
+    <label class="form-group lighter"> Description </label>
+    <input class="opacity" type="text" name="description" value="{{description}}"/>
+    <hr>
+    <label class="form-group lighter"> Price </label>
+    <input class="opacity" type="text" name="item" value=" {{price}}"/>
+    <label> Image </label>
+  <img  class="cart-image" src="{{pictureUrl}}"/>
+  <form action="/cart/{{id}}/remove" method="POST">
+      <button type="submit" class="form-control btn btn-primary submit px-3">Remove</button>
+  </form>
+  {{/each}}
+    <p>Total Price: <span id="price"> </span></p>
+    <input type="hidden" id="hidden" name="items" value="{{stringifyItems}}">
+</div>
+
+<script>
+  const myProducts = document.getElementById("hidden").value;
+  const itemsArr = JSON.parse(myProducts)
+  console.log(itemsArr)
+let prices = itemsArr.items.map(product => {
+  return product.price
+})
+let totalPrice = prices.reduce((a, b) => {
+  return a + b
+}, 0);
+document.getElementById('price').innerText = totalPrice
+</script>

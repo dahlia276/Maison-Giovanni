@@ -36,6 +36,12 @@
 
 .text-center{
   color: #fbceb5;
+  font-weight: lighter;
+}
+
+.lighter{
+  color: #fbceb5;
+  font-weight: lighter;
 }
 
 btn.btn-primary{
@@ -44,12 +50,20 @@ btn.btn-primary{
   color: #000 !important;
 }
 
+.att-info-btn{
+  width: 117px;
+  margin-top: 30px;
+  
+}
+
+
 .here{
   margin-left: 57PX;
   margin-top: -23px;
   background: #fbceb5 !important;
   border: 1px solid #fbceb5 !important;
   color: #000 !important;
+ 
 }
 
 
@@ -97,12 +111,66 @@ btn.btn-primary{
   background-size: cover;
   background-attachment: fixed;
   height: 3000px;
+  
 }
 
 .sign{
   background: #fbceb5 !important;
   border: 1px solid #fbceb5 !important;
   color: #000 !important;
+}
+
+.image-details{
+  height: 500px;
+  width: 500px;
+  border-radius: 10px;
+  margin-left: 626px;
+}
+
+.attire-name{
+color: white;
+font-weight: lighter;
+}
+
+.attire-price{
+  color: white;
+font-weight: lighter;
+}
+
+.attire-information{
+  border: 1px solid white;
+  border-radius: 10px;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  color: white;
+  font-weight: lighter;
+  margin-top: -500px;
+}
+
+.available{
+  margin-bottom: 2px;
+  margin-top: 5px;
+}
+
+.empty{
+  text-align: center;
+  font-weight: lighter;
+  color: white;
+}
+
+.empty-button{
+  margin-left: 643px;
+}
+
+.cart-page{
+  margin-top: 90px;
+}
+
+.cart-image{
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
 }
 
 .description{
@@ -116,6 +184,31 @@ btn.btn-primary{
 
 .cart{
   color: white;
+}
+
+.opacity{
+  opacity: 50%;
+}
+
+.about-title{
+  color:white;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.about-p{
+  color:white;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.admin{
+  margin-bottom: 5px;
+}
+
+.create{
+  height: 40px;
+  margin-top: -23px;
 }
 
 
