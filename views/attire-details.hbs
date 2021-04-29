@@ -1,43 +1,52 @@
 <div class="container">
     <div class="row">
- {{#if attire.pictureUrl}}
+        {{#if attire.pictureUrl}}
         <img class="image-details" src={{attire.pictureUrl}} />
         {{/if}}
-<hr>
-<div class="attire-information">
-     <h1 class="attire-name">{{attire.name}}</h1>
-        <p class="description"> {{attire.description}}</p>
-        <p>Fabric: {{attire.fabric}}</p>
-        <h6 class="attire-price">Price: {{attire.price}} </h6>
-<p class="available">Available colors: </p>
-    {{#each attire.color}}
-        {{this}}
-    {{/each}}
-<p class="available">Available sizes:</p> 
-    {{#each attire.size}}
-      {{this}}
-    {{/each}}
-     <form action="/cart/{{attire.id}}/add" method="post">
-        <button type="submit" value="Submit" class=" att-info-btn form-control btn btn-primary submit px-3">Add to cart</button>
-    </form>
-</div>
-   
-<br>
+        <hr>
+        <div class="attire-information">
+            <h1 class="attire-name">{{attire.name}}</h1>
+            <p class="description"> {{attire.description}}</p>
+            <p>Fabric: {{attire.fabric}}</p>
+            <h6 class="attire-price">Price: {{attire.price}} </h6>
+            <p class="available">Available colors: </p>
+            <select name="color">
+                <option value="">Choose color</option>
+                {{#each attire.color}}
+                <option value=" {{this}}">{{this}}</option>
+                {{/each}}
+            </select>
 
-<hr>
+            <p class="available">Available sizes:</p>
+            <select name="size">
+                <option value="">Choose size</option>
+                {{#each attire.size}}
+                <option value=" {{this}}">{{this}}</option>
+                {{/each}}
+            </select>
 
-<p>Add a review</p>
-<form action="/reviews/{{attire.id}}/add" method="POST">
-<label> User </label>
-<input type="text" name="user"/>
-<label> Comment</label>
-<textarea name="comment"> </textarea>
-<button type="submit">Add review</button>
-</form>
-<hr>
-<p>Reviews:</p>
-{{#each attire.reviews }}
-<p> {{comment}} -- {{user}} </p>
-{{/each}}
+            <form action="/cart/{{attire.id}}/add" method="post">
+                <button type="submit" value="Submit" class=" att-info-btn form-control btn btn-primary submit px-3">Add
+                    to cart</button>
+            </form>
+        </div>
+
+        <br>
+
+        <hr>
+
+        <p>Add a review</p>
+        <form action="/reviews/{{attire.id}}/add" method="POST">
+            <label> User </label>
+            <input type="text" name="user" />
+            <label> Comment</label>
+            <textarea name="comment"> </textarea>
+            <button type="submit">Add review</button>
+        </form>
+        <hr>
+        <p>Reviews:</p>
+        {{#each attire.reviews }}
+        <p> {{comment}} -- {{user}} </p>
+        {{/each}}
     </div>
 </div>

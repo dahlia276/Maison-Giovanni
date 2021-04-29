@@ -36,7 +36,7 @@ router.get("/shopping-cart", async (req, res) => {
   if (cart) {
     items = cart.items;
   }
-  console.log(items.length);
+  console.log(items.length)
   if (!cart) {
     res.render("empty-cart");
     return
@@ -59,5 +59,19 @@ router.post("/cart/:attireId/remove", async (req,res) => {
   res.redirect("/shopping-cart")
 });
 
+router.get('/checkout', async( req,res)=>{
 
+  const currentUser = await User.findById(req.session.currentUser._id);
+  const cart = await Cart.findOne({ user: currentUser }).populate('items');
+  let items= cart.items
+  let stringifyItems = JSON.stringify(cart)
+  res.render('checkout',{items, stringifyItems });
+})
+router.post('/checkout', async( req,res)=>{
+
+});
+
+router.get('/confirmation', async (req, res)=>{
+  res.render('confirmation-checkout')
+});
 module.exports = router;
