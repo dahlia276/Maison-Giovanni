@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get("/about-us", (req,res)=> {
-  res.render("about-us");
+  res.render("About-us");
 });
 
 /*router.get("/custom", (req,res)=> {
