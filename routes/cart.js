@@ -38,6 +38,12 @@ router.post("/cart/:attireId/add", async (req, res) => {
 
 //View shopping cart
 router.get("/shopping-cart", async (req, res) => {
+  if (!req.session.currentUser) {
+
+    res.render("auth/login", 
+    {errorMessage: "Login first to see your cart"});
+    return;
+  };
   const currentUser = await User.findById(req.session.currentUser._id);
   const cart = await Cart.findOne({ user: currentUser }).populate('items');
   let items = [];
